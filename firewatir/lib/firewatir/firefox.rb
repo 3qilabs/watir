@@ -427,7 +427,7 @@ module FireWatir
       start = Time.now
 
       while isLoadingDocument != "false"
-        isLoadingDocument = js_eval("#{browser_var}=#{window_var}.getBrowser(); #{browser_var}.webProgress.isLoadingDocument;")
+        isLoadingDocument = js_eval("#{browser_var}=#{window_var}.getBrowser(); #{browser_var}.webProgress.isLoadingDocument;") rescue return
         #puts "Is browser still loading page: #{isLoadingDocument}"
 
         # Raise an exception if the page fails to load
